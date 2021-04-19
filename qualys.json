@@ -7,7 +7,7 @@
 "Weakness Description": "CONSEQUENCE",
 "Weakness Detector Source": "Qualys",
 "Weakness Source Identifier": "QID",
-"Asset Identifier": "IP",
+"Asset Identifier": "IP IP",
 "Points of Contact": "",
 "Resources Required": "",
 "Overall Remediation Plan":"",
