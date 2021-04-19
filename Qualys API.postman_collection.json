@@ -1,0 +1,1656 @@
+{
+	"info": {
+		"_postman_id": "7b36c8e3-e7c8-4af3-8b4f-08e53899516b",
+		"name": "Qualys API - Getting Started Collection",
+		"description": "Welcome to the Postman collection for getting started with the Qualys API!\n\nFor more advanced use cases and a list of all paramaters with values please reference the relevant API user guides found here: https://www.qualys.com/documentation/\n\nAuthor: Laura Seletos\n\n---------------------\n[Getting Started]\n\nSTEP 1: Identify that your reaching out to the correct Qualys API Server\n\nAccount Location = API Server URL\nQualys US Platform 1 = https://qualysapi.qualys.com\nQualys US Platform 2 = https://qualysapi.qg2.apps.qualys.com\nQualys US Platform 3 = https://qualysapi.qg3.apps.qualys.com\nQualys US Platform 4 = https://qualysapi.qg4.apps.qualys.com\nQualys EU Platform 1 = https://qualysapi.qualys.eu\nQualys EU Platform 2 = https://qualysapi.qg2.apps.qualys.eu\nQualys India Platform 1 = https://qualysapi.qg1.apps.qualys.in\nQualys Private Cloud Platform = https://qualysapi.<customer_base_url>\n\nSTEP 2: Understanding API Limits: https://www.qualys.com/docs/qualys-api-limits.pdf\n\n---------------------\n[API Resources]:\n\n**Full list of API documentation: https://www.qualys.com/documentation/\n**Qualys API Quick Reference for all APIs: https://www.qualys.com/docs/qualys-api-quick-reference.pdf\n**Developer section within the Qualys Community: https://community.qualys.com/community/developer\n**Date/time format is YYYY-MM-DD[THH:MM:SSZ] where time is optional.\n**Github account: https://github.com/Qualys\n\n---------------------\n[Change Log]\n4/5/2019 - Version 1.0 - Laura Seletos - Create & populated postman collections\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step 1: Test API Access",
+			"item": [
+				{
+					"name": "Test KnowledgeBase Access",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "w1kE15sA#P!Mj9XE",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "strat3ac10",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "All",
+									"type": "text"
+								},
+								{
+									"key": "ids",
+									"value": "82054,82024",
+									"type": "text"
+								},
+								{
+									"key": "echo_request",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://qualysapi.qualys.com/api/2.0/fo/knowledge_base/vuln/",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"knowledge_base",
+								"vuln",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test VM API Access",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Qk06@MF2%Phbag7%",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "strat3ac12",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"url": {
+							"raw": "https://{{base_url}}/msp/user_list.php",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"msp",
+								"user_list.php"
+							]
+						},
+						"description": "The IP List API v2 (/api/2.0/fo/asset/ip/?action=list) is used to view a list of IP addresses in the user account. By default, all hosts in the user account are included. Optional input parameters support filtering the list by IP addresses and host tracking method. The GET or POST access method may be used to make an API request."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Step 2: Export Knowledgebase Data",
+			"item": [
+				{
+					"name": "Knowledge base, list all",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{base_url}}/api/2.0/fo/knowledge_base/vuln/",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"knowledge_base",
+								"vuln",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Knowledge base, list from 2013 Q1 (example)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{base_url}}/api/2.0/fo/knowledge_base/vuln/",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"knowledge_base",
+								"vuln",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Knowledge base, list QIDs 82054,82024  (example)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "W#7rR0kggr95nl%UZnnx",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "strat3ac13",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "All",
+									"type": "text"
+								},
+								{
+									"key": "ips",
+									"value": "10.2.0.5-10.2.0.10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ids",
+									"value": "105146, 90007",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{base_url}}/api/2.0/fo/knowledge_base/vuln/",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"knowledge_base",
+								"vuln",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "list",
+									"disabled": true
+								},
+								{
+									"key": "details",
+									"value": "all",
+									"disabled": true
+								},
+								{
+									"key": "ids",
+									"value": "90044",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Step 3: Export Vulnerability Data",
+			"item": [
+				{
+					"name": "Asset,Vulnerability",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Qk06@MF2%Phbag7%",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "strat3ac12",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"description": "(Required) List = Download",
+									"type": "text"
+								},
+								{
+									"key": "published_after",
+									"value": "2020-08-20",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "output_format",
+									"value": "XML",
+									"description": "(Optional) Specifies the format of the host detection list\noutput. When not specified, the output format is XML. A\nvalid value is XML, CSV, or CSV_NO_METADATA. ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ips",
+									"value": "172.16.1.83,10.0.1.189,10.0.1.7,10.0.1.30",
+									"description": "(Optional) Show only certain IP addresses/ranges. One or\nmore IPs/ranges may be specified. Multiple entries are\ncomma separated. An IP range is specified with a hyphen\n(for example: 10.10.10.1-10.10.10.100).",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "vm_scan_since",
+									"value": "2013-12-01",
+									"description": "(Optional) Show hosts scanned and processed since a\ncertain date and time (optional). The date/time is specified\nin YYYY-MM-DD[THH:MM:SSZ] format (UTC/GMT), like\n“2007-07-01” or “2007-01-25T23:12:00Z”.\nThis parameter cannot be specified with\nmax_days_since_vm_scan in the same reques",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "truncation_limit",
+									"value": "250",
+									"description": "Limit for quick testing",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "Fixed",
+									"description": "(Optional) Show only hosts with one or more of these\nstatus values: New, Active, Re-Opened, Fixed. Multiple\nstatus values are entered as a comma-separated list.\nIf this parameter is not passed to the API, by default, the\noutput contains detections with New, Active or Re-Opened\n<STATUS> only.\nTo get hosts with Fixed status, check this API sample\nQualys API - Host List Detection API samples (GitHub,\nsample 11)",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "qid",
+									"value": "38726",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "details",
+									"value": "None",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{base_url}}/api/2.0/fo/knowledge_base/vuln/",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"knowledge_base",
+								"vuln",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scan ",
+			"item": [
+				{
+					"name": "GET Scan List",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Scheduled",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://qualysguard.qg3.apps.qualys.com/api/2.0/fo/scan/",
+							"protocol": "https",
+							"host": [
+								"qualysguard",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"scan",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Scan Data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Dvwq5iH@",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wntte8ks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "fetch",
+									"type": "text"
+								},
+								{
+									"key": "scan_ref",
+									"value": "scan/1600549217.15318",
+									"type": "text"
+								},
+								{
+									"key": "output_format",
+									"value": "json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{base_url}}/api/2.0/fo/scan/",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"scan",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vm_detection",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "strat3ac13",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "W#7rR0kggr95nl%UZnnx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data; boundary=<calculated when request is sent>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Fixed",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ids",
+									"value": "15976",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "scan_ref",
+									"value": "scan/1600635617.15976",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "qids",
+									"value": "82040",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{base_url}}/api/2.0/fo/asset/host/vm/detection/",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"asset",
+								"host",
+								"vm",
+								"detection",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Qualys Test Configuration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Qk06@MF2%Phbag7%",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "strat3ac12",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "X-Requested-With",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data; boundary=<calculated when request is sent>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								},
+								{
+									"key": "ids",
+									"value": "38167",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cvss_base",
+									"value": "Low",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{base_url}}/api/2.0/fo/qid/search_list/dynamic/",
+							"protocol": "https",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"qid",
+								"search_list",
+								"dynamic",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Tools Configuration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"toolID\": 3,\r\n    \"username\":\"strat3ac12\",\r\n    \"password\":\"Qk06@MF2%Phbag7%\",\r\n    \"hostname\":\"qualysapi.qg3.apps.qualys.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.0.177:8080/TestCofiguration",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"177"
+							],
+							"port": "8080",
+							"path": [
+								"TestCofiguration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cloud-API",
+			"item": [
+				{
+					"name": "Get List of connectors",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://qualysguard.qg3.apps.qualys.com/cloudview-api/rest/v1/aws/connectors",
+							"protocol": "https",
+							"host": [
+								"qualysguard",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"cloudview-api",
+								"rest",
+								"v1",
+								"aws",
+								"connectors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get AWS Evaluation",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "authorization",
+								"value": "Basic ZWFydGgzYWExOmV3SGh5ZUJBZWVvVHY5OFhAR04hZUFVaw=="
+							}
+						],
+						"url": {
+							"raw": "https://qualysguard.qg3.apps.qualys.com/cloudview-api/rest/v1/aws/evaluations/124821994208",
+							"protocol": "https",
+							"host": [
+								"qualysguard",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"cloudview-api",
+								"rest",
+								"v1",
+								"aws",
+								"evaluations",
+								"124821994208"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get AWS Evaluation with Control ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "authorization",
+								"value": "Basic ZWFydGgzYWExOmV3SGh5ZUJBZWVvVHY5OFhAR04hZUFVaw=="
+							}
+						],
+						"url": {
+							"raw": "https://qualysguard.qg3.apps.qualys.com/cloudview-api/rest/v1/aws/evaluations/124821994208/resources/1",
+							"protocol": "https",
+							"host": [
+								"qualysguard",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"cloudview-api",
+								"rest",
+								"v1",
+								"aws",
+								"evaluations",
+								"124821994208",
+								"resources",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Details for resource id and control id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "authorization",
+								"value": "Basic ZWFydGgzYWExOmV3SGh5ZUJBZWVvVHY5OFhAR04hZUFVaw=="
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://qualysguard.qg3.apps.qualys.com/cloudview-api/rest/v1/aws/evaluations/stats/1/b130d922-3abb-3f3b-867f-3ae9a56046dc?resourceId=chris.souhrada.moneysmart",
+							"protocol": "https",
+							"host": [
+								"qualysguard",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"cloudview-api",
+								"rest",
+								"v1",
+								"aws",
+								"evaluations",
+								"stats",
+								"1",
+								"b130d922-3abb-3f3b-867f-3ae9a56046dc"
+							],
+							"query": [
+								{
+									"key": "resourceId",
+									"value": "chris.souhrada.moneysmart"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports Scans and Compliance",
+			"item": [
+				{
+					"name": "Get All Reports of Scan and compliance",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://qualysguard.qg3.apps.qualys.com/api/2.0/fo/report/?action=list",
+							"protocol": "https",
+							"host": [
+								"qualysguard",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "output_format",
+									"value": "csv",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "3795524",
+									"disabled": true
+								},
+								{
+									"key": "echo_request",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "action",
+									"value": "fetch",
+									"disabled": true
+								},
+								{
+									"key": "action",
+									"value": "list"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Web Application Scanning",
+			"item": [
+				{
+					"name": "WAS Auth",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/qps/rest/3.0/count/was/webappauthrecord",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"qps",
+								"rest",
+								"3.0",
+								"count",
+								"was",
+								"webappauthrecord"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Web Applications",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/qps/rest/3.0/search/was/webapp",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"qps",
+								"rest",
+								"3.0",
+								"search",
+								"was",
+								"webapp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WAS Report Template",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/qps/rest/3.0/search/was/reporttemplate",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"qps",
+								"rest",
+								"3.0",
+								"search",
+								"was",
+								"reporttemplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create WAS Report",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<ServiceRequest>\r\n <data>\r\n <Report>\r\n <name><![CDATA[Winjit Test API Web Application Report]]></name>\r\n <description><![CDATA[PDF Test WebApp report]]></description>\r\n <format>CSV</format>\r\n <type>WAS_WEBAPP_REPORT</type>\r\n <template>\r\n <id>1552464</id>\r\n </template>\r\n <config>\r\n <webAppReport>\r\n <target>\r\n <webapps>\r\n <WebApp>\r\n <id>97168018</id>\r\n </WebApp>\r\n <WebApp>\r\n <id>97168019</id>\r\n </WebApp>\r\n </webapps>\r\n</target>\r\n</webAppReport>\r\n</config>\r\n</Report>\r\n </data>\r\n</ServiceRequest>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/qps/rest/3.0/create/was/report",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"qps",
+								"rest",
+								"3.0",
+								"create",
+								"was",
+								"report"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Winjit_Test_WAS_Report",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "WAS_WEBAPP_REPORT",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "csv",
+									"disabled": true
+								},
+								{
+									"key": "template.id",
+									"value": "1552464",
+									"disabled": true
+								},
+								{
+									"key": "tags.id",
+									"value": "97168018",
+									"disabled": true
+								},
+								{
+									"key": "config",
+									"value": "webAppReport",
+									"disabled": true
+								},
+								{
+									"key": "tags.name",
+									"value": "Ontario-Chartmuseum",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Test Report",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WAS Report Data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/qps/rest/3.0/download/was/report/1943618",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"qps",
+								"rest",
+								"3.0",
+								"download",
+								"was",
+								"report",
+								"1943618"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policy Compliance",
+			"item": [
+				{
+					"name": "Get All policy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "list",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://qualysguard.qg3.apps.qualys.com/api/2.0/fo/compliance/policy/",
+							"protocol": "https",
+							"host": [
+								"qualysguard",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"compliance",
+								"policy",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Policy Compliance create report",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/api/2.0/fo/report/?action=list",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "launch",
+									"disabled": true
+								},
+								{
+									"key": "template_id",
+									"value": "9771189",
+									"disabled": true
+								},
+								{
+									"key": "output_format",
+									"value": "csv",
+									"disabled": true
+								},
+								{
+									"key": "policy_id",
+									"value": "4965692,4965692",
+									"disabled": true
+								},
+								{
+									"key": "report_title",
+									"value": "Winjit_Test_PC_Report",
+									"disabled": true
+								},
+								{
+									"key": "action",
+									"value": "list"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Qualys VM Report",
+			"item": [
+				{
+					"name": "Get All Asset Groups",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/api/2.0/fo/asset/group?action=list",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"asset",
+								"group"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "list"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Qualys VM Report",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/api/2.0/fo/report/?action=launch&template_id=9771175&output_format=csv&asset_group_ids=7308905&report_title=Winjit_Test_VM_report",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"fo",
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "launch"
+								},
+								{
+									"key": "template_id",
+									"value": "9771175"
+								},
+								{
+									"key": "output_format",
+									"value": "csv"
+								},
+								{
+									"key": "asset_group_ids",
+									"value": "7308905"
+								},
+								{
+									"key": "report_title",
+									"value": "Winjit_Test_VM_report"
+								},
+								{
+									"key": "scan_selection",
+									"value": "HostBased",
+									"disabled": true
+								},
+								{
+									"key": "report_type",
+									"value": "Scan",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Template list for Policy Compliance and VM",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ewHhyeBAeeoTv98X@GN!eAUk",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "earth3aa1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "QualysPostman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://qualysapi.qg3.apps.qualys.com/msp/report_template_list.php",
+							"protocol": "https",
+							"host": [
+								"qualysapi",
+								"qg3",
+								"apps",
+								"qualys",
+								"com"
+							],
+							"path": [
+								"msp",
+								"report_template_list.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
